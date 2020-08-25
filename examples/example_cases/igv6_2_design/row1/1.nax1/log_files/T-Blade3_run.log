@@ -1,0 +1,1561 @@
+
+ ************************************************************
+ ************************************************************
+ ****  T-BLADE3:Turbomachinery BLADE 3D Geometry Builder ****
+ ****                                                    ****
+ ****  Master Version 1.12                               ****
+ ****                                                    ****
+ ****  ...was also called as below till Aug 2016...      ****
+ ****  3DBGB: 3 Dimensional Blade Geometry Builder       ****
+ ****                                                    ****
+ ****  Develop Version 1.12.8                            ****
+ ****                                                    ****
+ ****  This software comes with ABSOLUTELY NO WARRANTY   ****
+ ****                                                    ****
+ ****  This is a program which generates a 3D blade...   ****
+ ****  ...shape and outputs 3D blade section files.      ****
+ ****                                                    ****
+ ****  Inputs: LE and TE curve(x,r), inlet angle,        ****
+ ****          exit angle, chord, tm/c, incidence,       ****
+ ****          deviation, secondary flow angles,         ****
+ ****          streamline coordinates:(x,r)              ****
+ ****          control points for sweep, lean,           ****
+ ****          blade scaling factor.                     ****
+ ****                                                    ****
+ ****  Outputs: 3D blade sections (x,y,z),               ****
+ ****           2D airfoils (mprime,theta).              ****
+ ****                                                    ****
+ ****  ---------------by Kiran Siddappaji         ----   ****
+ ****  ---------------by Mark G. Turner           ----   ****
+ ****  ------------------- turnermr@ucmail.uc.edu ----   ****
+ ****  ---------------by Karthik Balasubramanian  ----   ****
+ ****  ---------------by Syed Moez Hussain Mahmood----   ****
+ ****  ---------------by Ahmed Nemnem             ----   ****
+ ****  ---------------by Marshall C. Galbraith    ----   ****
+ ************************************************************
+ ************************************************************
+
+ T-Blade3 Copyright (C) 2017 University of Cincinnati, developed by Kiran Siddappaji,
+ Dr. Mark G. Turner, Karthik  Balasubramanian, Syed Moez Hussain, Ahmed Farid Nemnem 
+  and Marshall C. Galbraith.
+
+ This program is free software; you can redistribute it and/or modify it under the 
+ terms of the GNU General Public License as published by the Free Software Foundation; 
+ either version 2 of the License, or (at your option) any later version.
+
+ This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+ without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. 
+ See the GNU General Public License for more details.  For the complete terms of the 
+ GNU General Public License, please see this URL: http://www.gnu.org/licenses/gpl-2.0.html
+
+ ************************************************************
+
+ Row number and blade  type is 1nax1                                                                                                                                                                                                                                                           
+ 
+ 3dbgbinput.1nax1.dat                                                                                                                                                                                                                                            
+ 
+ Incidence and Deviation defined spanwise as a B-spline using control points
+ 
+ inci_dev_spline
+ 
+ Reading inputs from file: 3dbgbinput.1nax1.dat                                                                                                                                                                                                                                            
+ 
+ Reading the spanwise_input file ....
+
+ spanwise input file read successfully
+
+ case:Case6_2                                                                                                                                                                                                                                                         
+ bladerow #:           1
+   1       
+
+ Number of blades in this row:          20
+ bsf:   152.40000000000001     
+
+
+    in_betaZ*    out_betaZ*
+   0.0000000000000000       -19.030736500000000     
+   0.0000000000000000       -13.772680429999999     
+   0.0000000000000000       -10.258185670000000     
+   0.0000000000000000       -8.1097568599999992     
+   0.0000000000000000       -6.3683073500000003     
+   0.0000000000000000       -4.8750483899999999     
+   0.0000000000000000       -3.6576954800000001     
+   0.0000000000000000       -2.5996792599999998     
+   0.0000000000000000       -1.7006599600000001     
+   0.0000000000000000      -0.91793367999999997     
+   0.0000000000000000      -0.25471163000000002     
+   0.0000000000000000       0.33827494000000002     
+   0.0000000000000000       0.85759470000000004     
+   0.0000000000000000        1.3219841500000000     
+   0.0000000000000000        1.7276708199999999     
+   0.0000000000000000        2.1195313900000001     
+   0.0000000000000000        2.4897911000000001     
+   0.0000000000000000        2.8427144000000002     
+   0.0000000000000000        3.1807965000000000     
+   0.0000000000000000        3.5276307199999999     
+   0.0000000000000000        3.8970639100000000     
+
+ LE/TE defined by a curve with no. of points as:          27
+ xLE    rLE     xTE     rTE
+ -0.38559800000000000       0.33446199999999998      -0.15491800000000000       0.32155000000000000     
+ -0.38349400000000000       0.35834300000000002      -0.15277499999999999       0.34657700000000002     
+ -0.38139000000000001       0.38222299999999998      -0.15063299999999999       0.37160399999999999     
+ -0.37928600000000001       0.40610400000000002      -0.14849000000000001       0.39663100000000001     
+ -0.37718200000000002       0.42998500000000001      -0.14634700000000000       0.42165700000000000     
+ -0.37507800000000002       0.45386599999999999      -0.14420500000000000       0.44668400000000003     
+ -0.37297400000000003       0.47774600000000000      -0.14206199999999999       0.47171099999999999     
+ -0.37086999999999998       0.50162700000000005      -0.13991899999999999       0.49673800000000001     
+ -0.36876599999999998       0.52550799999999998      -0.13777600000000001       0.52176500000000003     
+ -0.36666199999999999       0.54938799999999999      -0.13563400000000000       0.54679199999999994     
+ -0.36455799999999999       0.57326900000000003      -0.13349100000000000       0.57181899999999997     
+ -0.36245300000000003       0.59714999999999996      -0.13134799999999999       0.59684599999999999     
+ -0.36034899999999997       0.62103100000000000      -0.12920599999999999       0.62187300000000001     
+ -0.35824499999999998       0.64491200000000004      -0.12706300000000001       0.64690000000000003     
+ -0.35614099999999999       0.66879299999999997      -0.12492000000000000       0.67192700000000005     
+ -0.35403699999999999       0.69267299999999998      -0.12277800000000000       0.69695399999999996     
+ -0.35193300000000000       0.71655400000000002      -0.12063500000000001       0.72198099999999998     
+ -0.34982900000000000       0.74043499999999995      -0.11849200000000000       0.74700699999999998     
+ -0.34772500000000001       0.76431600000000000      -0.11635000000000000       0.77203400000000000     
+ -0.34562100000000001       0.78819600000000001      -0.11420700000000000       0.79706100000000002     
+ -0.34351700000000002       0.81207700000000005      -0.11206400000000000       0.82208800000000004     
+ -0.34141300000000002       0.83595799999999998      -0.10992100000000000       0.84711499999999995     
+ -0.33930900000000003       0.85983799999999999      -0.10777900000000000       0.87214199999999997     
+ -0.33720499999999998       0.88371900000000003      -0.10563599999999999       0.89716899999999999     
+ -0.33510099999999998       0.90759999999999996      -0.10349300000000000       0.92219600000000002     
+ -0.33299699999999999       0.93148100000000000      -0.10135100000000000       0.94722300000000004     
+ -0.32559900000000003        1.0154440000000000       -9.4880000000000006E-002   1.0227999999999999     
+ 
+ sect1                  25.000000000000000        0.0000000000000000       0.29999999999999999        2.0000000000000000E-002   2.0000000000000000E-002   15.000000000000000        10.000000000000000                0
+ sect1                  25.000000000000000        0.0000000000000000       0.29999999999999999        2.0000000000000000E-002   2.0000000000000000E-002   15.000000000000000        10.000000000000000                0
+ sect1                  25.000000000000000        0.0000000000000000       0.29999999999999999        2.0000000000000000E-002   2.0000000000000000E-002   15.000000000000000        10.000000000000000                0
+ sect1                  25.000000000000000        0.0000000000000000       0.29999999999999999        2.0000000000000000E-002   2.0000000000000000E-002   15.000000000000000        10.000000000000000                0
+ sect1                  25.000000000000000        0.0000000000000000       0.29999999999999999        2.0000000000000000E-002   2.0000000000000000E-002   15.000000000000000        10.000000000000000                0
+ sect1                  25.000000000000000        0.0000000000000000       0.29999999999999999        2.0000000000000000E-002   2.0000000000000000E-002   15.000000000000000        10.000000000000000                0
+ sect1                  25.000000000000000        0.0000000000000000       0.29999999999999999        2.0000000000000000E-002   2.0000000000000000E-002   15.000000000000000        10.000000000000000                0
+ sect1                  25.000000000000000        0.0000000000000000       0.29999999999999999        2.0000000000000000E-002   2.0000000000000000E-002   15.000000000000000        10.000000000000000                0
+ sect1                  25.000000000000000        0.0000000000000000       0.29999999999999999        2.0000000000000000E-002   2.0000000000000000E-002   15.000000000000000        10.000000000000000                0
+ sect1                  25.000000000000000        0.0000000000000000       0.29999999999999999        2.0000000000000000E-002   2.0000000000000000E-002   15.000000000000000        10.000000000000000                0
+ sect1                  25.000000000000000        0.0000000000000000       0.29999999999999999        2.0000000000000000E-002   2.0000000000000000E-002   15.000000000000000        10.000000000000000                0
+ sect1                  25.000000000000000        0.0000000000000000       0.29999999999999999        2.0000000000000000E-002   2.0000000000000000E-002   15.000000000000000        10.000000000000000                0
+ sect1                  25.000000000000000        0.0000000000000000       0.29999999999999999        2.0000000000000000E-002   2.0000000000000000E-002   15.000000000000000        10.000000000000000                0
+ sect1                  25.000000000000000        0.0000000000000000       0.29999999999999999        2.0000000000000000E-002   2.0000000000000000E-002   15.000000000000000        10.000000000000000                0
+ sect1                  25.000000000000000        0.0000000000000000       0.29999999999999999        2.0000000000000000E-002   2.0000000000000000E-002   15.000000000000000        10.000000000000000                0
+ sect1                  25.000000000000000        0.0000000000000000       0.29999999999999999        2.0000000000000000E-002   2.0000000000000000E-002   15.000000000000000        10.000000000000000                0
+ sect1                  25.000000000000000        0.0000000000000000       0.29999999999999999        2.0000000000000000E-002   2.0000000000000000E-002   15.000000000000000        10.000000000000000                0
+ sect1                  25.000000000000000        0.0000000000000000       0.29999999999999999        2.0000000000000000E-002   2.0000000000000000E-002   15.000000000000000        10.000000000000000                0
+ sect1                  25.000000000000000        0.0000000000000000       0.29999999999999999        2.0000000000000000E-002   2.0000000000000000E-002   15.000000000000000        10.000000000000000                0
+ sect1                  25.000000000000000        0.0000000000000000       0.29999999999999999        2.0000000000000000E-002   2.0000000000000000E-002   15.000000000000000        10.000000000000000                0
+ sect1                  25.000000000000000        0.0000000000000000       0.29999999999999999        2.0000000000000000E-002   2.0000000000000000E-002   15.000000000000000        10.000000000000000                0
+ 
+ Sweep in the axial direction (m-prime).
+ 
+ Lean in the tangential direction (theta).
+ 
+ Writing dimensional hub and casing streamlines...
+
+ Using x_s and r_s coordinates for streamline from the input file...
+
+ Calculating the m_prime coordinates for each streamline...
+
+ 
+ hub offset:   0.0000000000000000     
+ tip offset:   0.0000000000000000     
+
+ xLE    rLE     xTE     rTE
+ 
+ Calculating LE x, r points... 
+ 
+ Calculating TE x, r points...
+ 
+ i_slope           0
+ i_slope           0
+ i_slope           0
+ i_slope           0
+ i_slope           0
+ i_slope           0
+ i_slope           0
+ i_slope           0
+ i_slope           0
+ i_slope           0
+ i_slope           0
+ i_slope           0
+ i_slope           0
+ i_slope           0
+ i_slope           0
+ i_slope           0
+ i_slope           0
+ i_slope           0
+ i_slope           0
+ i_slope           0
+ i_slope           0
+ 
+ ile:           2
+ ite:           5
+ ile:          14
+ ite:          51
+ ile:          14
+ ite:          52
+ ile:          15
+ ite:          53
+ ile:          15
+ ite:          53
+ ile:          15
+ ite:          54
+ ile:          16
+ ite:          54
+ ile:          16
+ ite:          55
+ ile:          17
+ ite:          55
+ ile:          17
+ ite:          56
+ ile:          18
+ ite:          56
+ ile:          18
+ ite:          57
+ ile:          19
+ ite:          57
+ ile:          19
+ ite:          58
+ ile:          20
+ ite:          58
+ ile:          20
+ ite:          58
+ ile:          21
+ ite:          59
+ ile:          21
+ ite:          59
+ ile:          22
+ ite:          60
+ ile:          22
+ ite:          60
+ ile:           4
+ ite:           9
+
+ Using x values for msLE due to a purely axial flow.
+ Using x values for msTE due to a purely axial flow.
+ msle:  0.31997201583567025     
+ mste:  0.96347654244761249     
+ chordm:  0.64350452661194224     
+ Using x values for msLE due to a purely axial flow.
+ Using x values for msTE due to a purely axial flow.
+ msle:  0.19591061812972421     
+ mste:  0.78122589299639089     
+ chordm:  0.58531527486666668     
+ Using x values for msLE due to a purely axial flow.
+ Using x values for msTE due to a purely axial flow.
+ msle:  0.18858472554247366     
+ mste:  0.72587005897914580     
+ chordm:  0.53728533343667217     
+ Using x values for msLE due to a purely axial flow.
+ Using x values for msTE due to a purely axial flow.
+ msle:  0.18202228819863855     
+ mste:  0.67898268460117983     
+ chordm:  0.49696039640254130     
+ Using x values for msLE due to a purely axial flow.
+ Using x values for msTE due to a purely axial flow.
+ msle:  0.17614470457452563     
+ mste:  0.63883669129540321     
+ chordm:  0.46269198672087758     
+ Using x values for msLE due to a purely axial flow.
+ Using x values for msTE due to a purely axial flow.
+ msle:  0.17089595124690959     
+ mste:  0.60422999736951954     
+ chordm:  0.43333404612260995     
+ Using x values for msLE due to a purely axial flow.
+ Using x values for msTE due to a purely axial flow.
+ msle:  0.16621265013027903     
+ mste:  0.57402662646346414     
+ chordm:  0.40781397633318511     
+ Using x values for msLE due to a purely axial flow.
+ Using x values for msTE due to a purely axial flow.
+ msle:  0.16202686761307153     
+ mste:  0.54747317435424436     
+ chordm:  0.38544630674117286     
+ Using x values for msLE due to a purely axial flow.
+ Using x values for msTE due to a purely axial flow.
+ msle:  0.15826704240584155     
+ mste:  0.52391879987733658     
+ chordm:  0.36565175747149503     
+ Using x values for msLE due to a purely axial flow.
+ Using x values for msTE due to a purely axial flow.
+ msle:  0.15487455567161304     
+ mste:  0.50285511902735058     
+ chordm:  0.34798056335573757     
+ Using x values for msLE due to a purely axial flow.
+ Using x values for msTE due to a purely axial flow.
+ msle:  0.15179715234105678     
+ mste:  0.48388147294776918     
+ chordm:  0.33208432060671239     
+ Using x values for msLE due to a purely axial flow.
+ Using x values for msTE due to a purely axial flow.
+ msle:  0.14899024894909024     
+ mste:  0.46668088574850536     
+ chordm:  0.31769063679941512     
+ Using x values for msLE due to a purely axial flow.
+ Using x values for msTE due to a purely axial flow.
+ msle:  0.14641641117394560     
+ mste:  0.45099283419618041     
+ chordm:  0.30457642302223481     
+ Using x values for msLE due to a purely axial flow.
+ Using x values for msTE due to a purely axial flow.
+ msle:  0.14404389552946165     
+ mste:  0.43661375322377421     
+ chordm:  0.29256985769431254     
+ Using x values for msLE due to a purely axial flow.
+ Using x values for msTE due to a purely axial flow.
+ msle:  0.14184575532997165     
+ mste:  0.42337347550665283     
+ chordm:  0.28152772017668115     
+ Using x values for msLE due to a purely axial flow.
+ Using x values for msTE due to a purely axial flow.
+ msle:  0.13979964887105908     
+ mste:  0.41111659638134473     
+ chordm:  0.27131694751028568     
+ Using x values for msLE due to a purely axial flow.
+ Using x values for msTE due to a purely axial flow.
+ msle:  0.13788623181072737     
+ mste:  0.39970106503241376     
+ chordm:  0.26181483322168642     
+ Using x values for msLE due to a purely axial flow.
+ Using x values for msTE due to a purely axial flow.
+ msle:  0.13608793150139117     
+ mste:  0.38898868932967218     
+ chordm:  0.25290075782828103     
+ Using x values for msLE due to a purely axial flow.
+ Using x values for msTE due to a purely axial flow.
+ msle:  0.13439292192103683     
+ mste:  0.37883608768943461     
+ chordm:  0.24444316576839778     
+ Using x values for msLE due to a purely axial flow.
+ Using x values for msTE due to a purely axial flow.
+ msle:  0.13280531026374201     
+ mste:  0.36904839003825551     
+ chordm:  0.23624307977451350     
+ Using x values for msLE due to a purely axial flow.
+ Using x values for msTE due to a purely axial flow.
+ msle:  0.13865186232444504     
+ mste:  0.36616931882926257     
+ chordm:  0.22751745650481753     
+ 
+ phi_s_in(ia)  -8.1681972192684462     
+ phi_s_in(ia)  -5.3489122838975414     
+ phi_s_in(ia)  -2.8643540865073414     
+ phi_s_in(ia) -0.98359490077386924     
+ phi_s_in(ia)  0.37008750378295663     
+ phi_s_in(ia)   1.3157268673562235     
+ phi_s_in(ia)   1.9634820599118101     
+ phi_s_in(ia)   2.3697212053073144     
+ phi_s_in(ia)   2.5703248259334832     
+ phi_s_in(ia)   2.5952992786169351     
+ phi_s_in(ia)   2.4712304018026918     
+ phi_s_in(ia)   2.2202643590329538     
+ phi_s_in(ia)   1.8562541586298471     
+ phi_s_in(ia)   1.3815300239749826     
+ phi_s_in(ia)  0.80100011706022467     
+ phi_s_in(ia)  0.13014569980949914     
+ phi_s_in(ia) -0.61052704954440806     
+ phi_s_in(ia)  -1.3994675440785769     
+ phi_s_in(ia)  -2.2021210458103666     
+ phi_s_in(ia)  -2.9642064555909902     
+ phi_s_in(ia)  -3.6325789877822059     
+ phi_s_out(ia)  -7.0643607153971786     
+ phi_s_out(ia)  -3.2325674022299431     
+ phi_s_out(ia)  -1.0279521760648429     
+ phi_s_out(ia)  0.46979160250659852     
+ phi_s_out(ia)   1.5156758427136672     
+ phi_s_out(ia)   2.1708357199746748     
+ phi_s_out(ia)   2.5666988827012571     
+ phi_s_out(ia)   2.7292312715203839     
+ phi_s_out(ia)   2.7135364675276850     
+ phi_s_out(ia)   2.5657235809381937     
+ phi_s_out(ia)   2.3223553537939505     
+ phi_s_out(ia)   2.0098197735321470     
+ phi_s_out(ia)   1.6453578005193750     
+ phi_s_out(ia)   1.2459929945809223     
+ phi_s_out(ia)  0.83215528710413889     
+ phi_s_out(ia)  0.41734573751443399     
+ phi_s_out(ia)   1.6493882429051643E-002
+ phi_s_out(ia) -0.35854412563930482     
+ phi_s_out(ia) -0.69188693013008074     
+ phi_s_out(ia) -0.96615944959174838     
+ phi_s_out(ia)  -1.2136468930237228     
+ 
+ Creating cubic bspline with spancontrolinput file
+ bspline created successfully
+
+  Inlet Beta incidence defined spanwise by a cubic B-spline using control points.
+    span         in_Beta (spline)
+   0.0000000000000000        0.0000000000000000     
+   4.3387452907245522E-002   0.0000000000000000     
+   9.1666814348395992E-002   0.0000000000000000     
+  0.14180684101438704        0.0000000000000000     
+  0.19287314220344681        0.0000000000000000     
+  0.24429913550710761        0.0000000000000000     
+  0.29570585218523998        0.0000000000000000     
+  0.34684875028072154        0.0000000000000000     
+  0.39758620514910942        0.0000000000000000     
+  0.44785993027610921        0.0000000000000000     
+  0.49767092108288941        0.0000000000000000     
+  0.54706198722188681        0.0000000000000000     
+  0.59610281898167339        0.0000000000000000     
+  0.64488314347623310        0.0000000000000000     
+  0.69351621916945305        0.0000000000000000     
+  0.74214526809226933        0.0000000000000000     
+  0.79095033706026341        0.0000000000000000     
+  0.84016821100777206        0.0000000000000000     
+  0.89017971105885929        0.0000000000000000     
+  0.94188710962677069        0.0000000000000000     
+   1.0000000000000000        0.0000000000000000     
+
+  Outlet Beta deviation defined spanwise by a cubic B-spline using control points.
+    span        out_Beta (spline)
+   0.0000000000000000       -15.437902083782529     
+   4.3387452907245522E-002  -13.490281500471477     
+   9.1666814348395992E-002  -11.907287428548663     
+  0.14180684101438704       -9.9255594683725583     
+  0.19287314220344681       -7.3583422924241688     
+  0.24429913550710761       -4.8250806366177406     
+  0.29570585218523998       -2.7953868634978858     
+  0.34684875028072154       -1.5349966214710293     
+  0.39758620514910942       -1.2958306893967095     
+  0.44785993027610921       -1.6468844003829752     
+  0.49767092108288941       -2.0268338449764371     
+  0.54706198722188681        2.6031239759136531     
+  0.59610281898167339        2.8221309554310037     
+  0.64488314347623310        2.3849072462934107     
+  0.69351621916945305        1.6168035138101950     
+  0.74214526809226933       0.82078699232691066     
+  0.79095033706026341       0.26864860192877904     
+  0.84016821100777206       0.40395979401050575     
+  0.89017971105885929        1.8046961533220816     
+  0.94188710962677069        4.8279935412858048     
+   1.0000000000000000        9.7092172370611109     
+ 
+ Internally calculated chord...
+ Stagger calculated from the inlet and exit angles...
+
+ ---------------------------------------------------------------------------------
+ airfoil type:           1 sect1
+  =================================================== 
+ Using sine function based clustering distribution
+ 
+ lethk =    2.0000000000000000E-002
+
+Using curvature control for camber definition...
+ xcp -0.14999999999999999        0.0000000000000000       0.14999999999999999       0.24999999999999997       0.49999999999999994       0.75000000000000000       0.94999999999999996        1.0000000000000000        1.0500000000000000     
+ ycp   0.0000000000000000        0.0000000000000000        0.0000000000000000       0.49999999999999994       0.29999999999999999       0.14999999999999999        0.0000000000000000        0.0000000000000000        0.0000000000000000     
+Total camber is:  -15.326237683667525
+Determinant is:    0.039406643777579
+Possible values of scaling factor are:       -78.295955935862906        1.405365201252311
+Camber line second derivative scaling factor:    1.405365201252311
+Inlet u-v metal angle in deg:    8.374860560636563
+Exit u-v metal angle in deg:   -6.951377123030948
+Stagger angle in deg:   -8.374860560636563
+ i_le =            0
+ i_te =            0
+         121
+         241
+ 
+ Stacking position on the chord as % of chord:   25.000000000000000     
+ Stacking position in % above(+ve) or below(-ve) meanline :   0.0000000000000000     
+ top curve points index range for % chord stacking:          44          45
+ bottom curve points index range for % chord stacking:          45          46
+ vtop_stack vbot_stack   8.4627928138791442E-002  -1.4760926343919140E-002
+ 
+ u_stack  v_stack  0.25000000000000000        0.0000000000000000     
+ 
+ chrd bladegen:   0.65044060800841097     
+ pitch   0.31415926535897931     
+ np_sidee         121
+ n_normal_distance =           94
+ Number of intersection points (k) =           94 from np_side of         121
+ splinedata_section.1.Case6_2.dat                                                
+ stingl:    0.0000000000000000     
+ ******************************************
+ 
+ Internally calculated chord...
+ Stagger calculated from the inlet and exit angles...
+
+ ---------------------------------------------------------------------------------
+ airfoil type:           2 sect1
+  =================================================== 
+ Using sine function based clustering distribution
+ 
+ lethk =    2.0000000000000000E-002
+
+Using curvature control for camber definition...
+ xcp -0.14999999999999999        0.0000000000000000       0.14999999999999999       0.24999999999999994       0.49999999999999989       0.75000000000000000       0.94999999999999984        1.0000000000000000        1.0500000000000003     
+ ycp   0.0000000000000000        0.0000000000000000        0.0000000000000000       0.49999999999999989       0.29999999999999999       0.14999999999999999        0.0000000000000000        0.0000000000000000        0.0000000000000000     
+Total camber is:  -13.469599505346654
+Determinant is:    0.038761722165270
+Possible values of scaling factor are:       -89.213270725777264        1.233386142844920
+Camber line second derivative scaling factor:    1.233386142844920
+Inlet u-v metal angle in deg:    7.362013246658113
+Exit u-v metal angle in deg:   -6.107586258688530
+Stagger angle in deg:   -7.362013246658113
+ i_le =            0
+ i_te =            0
+         121
+         241
+ 
+ Stacking position on the chord as % of chord:   25.000000000000000     
+ Stacking position in % above(+ve) or below(-ve) meanline :   0.0000000000000000     
+ top curve points index range for % chord stacking:          44          45
+ bottom curve points index range for % chord stacking:          45          46
+ vtop_stack vbot_stack   8.0291380160107201E-002  -1.8970169423071798E-002
+ 
+ u_stack  v_stack  0.25000000000000000        0.0000000000000000     
+ 
+ chrd bladegen:   0.59018052533381204     
+ pitch   0.31415926535897931     
+ np_sidee         121
+ n_normal_distance =           95
+ Number of intersection points (k) =           95 from np_side of         121
+ splinedata_section.2.Case6_2.dat                                                
+ stingl:    0.0000000000000000     
+ ******************************************
+ 
+ Internally calculated chord...
+ Stagger calculated from the inlet and exit angles...
+
+ ---------------------------------------------------------------------------------
+ airfoil type:           3 sect1
+  =================================================== 
+ Using sine function based clustering distribution
+ 
+ lethk =    2.0000000000000000E-002
+
+Using curvature control for camber definition...
+ xcp -0.14999999999999999        0.0000000000000000       0.14999999999999999       0.25000000000000000       0.50000000000000000       0.75000000000000000       0.94999999999999996        1.0000000000000000        1.0500000000000000     
+ ycp   0.0000000000000000        0.0000000000000000        0.0000000000000000       0.50000000000000000       0.29999999999999999       0.14999999999999999        0.0000000000000000        0.0000000000000000        0.0000000000000000     
+Total camber is:  -11.905425782094316
+Determinant is:    0.038292101988901
+Possible values of scaling factor are:      -101.039413089726537        1.089024653907394
+Camber line second derivative scaling factor:    1.089024653907394
+Inlet u-v metal angle in deg:    6.508202819870806
+Exit u-v metal angle in deg:   -5.397222962223461
+Stagger angle in deg:   -6.508202819870806
+ i_le =            0
+ i_te =            0
+         121
+         241
+ 
+ Stacking position on the chord as % of chord:   25.000000000000000     
+ Stacking position in % above(+ve) or below(-ve) meanline :   0.0000000000000000     
+ top curve points index range for % chord stacking:          44          45
+ bottom curve points index range for % chord stacking:          45          46
+ vtop_stack vbot_stack   7.6657447194537709E-002  -2.2510498305324145E-002
+ 
+ u_stack  v_stack  0.25000000000000000        0.0000000000000000     
+ 
+ chrd bladegen:   0.54077025236722043     
+ pitch   0.31415926535897931     
+ np_sidee         121
+ n_normal_distance =           95
+ Number of intersection points (k) =           95 from np_side of         121
+ splinedata_section.3.Case6_2.dat                                                
+ stingl:    0.0000000000000000     
+ ******************************************
+ 
+ Internally calculated chord...
+ Stagger calculated from the inlet and exit angles...
+
+ ---------------------------------------------------------------------------------
+ airfoil type:           4 sect1
+  =================================================== 
+ Using sine function based clustering distribution
+ 
+ lethk =    2.0000000000000000E-002
+
+Using curvature control for camber definition...
+ xcp -0.14999999999999997        0.0000000000000000       0.14999999999999997       0.25000000000000000       0.50000000000000000       0.75000000000000000       0.94999999999999996        1.0000000000000000        1.0500000000000000     
+ ycp   0.0000000000000000        0.0000000000000000        0.0000000000000000       0.50000000000000000       0.29999999999999993       0.14999999999999997        0.0000000000000000        0.0000000000000000        0.0000000000000000     
+Total camber is:   -9.925232455806563
+Determinant is:    0.037789295941669
+Possible values of scaling factor are:      -121.335038943848986        0.906864272915976
+Camber line second derivative scaling factor:    0.906864272915976
+Inlet u-v metal angle in deg:    5.426724396594898
+Exit u-v metal angle in deg:   -4.498508059211594
+Stagger angle in deg:   -5.426724396594898
+ i_le =            0
+ i_te =            0
+         121
+         241
+ 
+ Stacking position on the chord as % of chord:   25.000000000000000     
+ Stacking position in % above(+ve) or below(-ve) meanline :   0.0000000000000000     
+ top curve points index range for % chord stacking:          44          45
+ bottom curve points index range for % chord stacking:          45          46
+ vtop_stack vbot_stack   7.2080152745018292E-002  -2.6987004303504654E-002
+ 
+ u_stack  v_stack  0.25000000000000000        0.0000000000000000     
+ 
+ chrd bladegen:   0.49919782025690657     
+ pitch   0.31415926535897931     
+ np_sidee         121
+ n_normal_distance =           96
+ Number of intersection points (k) =           96 from np_side of         121
+ splinedata_section.4.Case6_2.dat                                                
+ stingl:    0.0000000000000000     
+ ******************************************
+ 
+ Internally calculated chord...
+ Stagger calculated from the inlet and exit angles...
+
+ ---------------------------------------------------------------------------------
+ airfoil type:           5 sect1
+  =================================================== 
+ Using sine function based clustering distribution
+ 
+ lethk =    2.0000000000000000E-002
+
+Using curvature control for camber definition...
+ xcp -0.14999999999999999        0.0000000000000000       0.14999999999999999       0.25000000000000000       0.50000000000000000       0.75000000000000000       0.94999999999999984        1.0000000000000000        1.0500000000000003     
+ ycp   0.0000000000000000        0.0000000000000000        0.0000000000000000       0.50000000000000000       0.29999999999999999       0.14999999999999999        0.0000000000000000        0.0000000000000000        0.0000000000000000     
+Total camber is:   -7.355795997964493
+Determinant is:    0.037282049170619
+Possible values of scaling factor are:      -163.908325568757249        0.671316795466174
+Camber line second derivative scaling factor:    0.671316795466174
+Inlet u-v metal angle in deg:    4.022628915941914
+Exit u-v metal angle in deg:   -3.333167082022478
+Stagger angle in deg:   -4.022628915941914
+ i_le =            0
+ i_te =            0
+         121
+         241
+ 
+ Stacking position on the chord as % of chord:   25.000000000000000     
+ Stacking position in % above(+ve) or below(-ve) meanline :   0.0000000000000000     
+ top curve points index range for % chord stacking:          44          45
+ bottom curve points index range for % chord stacking:          45          46
+ vtop_stack vbot_stack   6.6174843231841557E-002  -3.2790735524854654E-002
+ 
+ u_stack  v_stack  0.25000000000000000        0.0000000000000000     
+ 
+ chrd bladegen:   0.46383467953916835     
+ pitch   0.31415926535897931     
+ np_sidee         121
+ n_normal_distance =           98
+ Number of intersection points (k) =           98 from np_side of         121
+ splinedata_section.5.Case6_2.dat                                                
+ stingl:    0.0000000000000000     
+ ******************************************
+ 
+ Internally calculated chord...
+ Stagger calculated from the inlet and exit angles...
+
+ ---------------------------------------------------------------------------------
+ airfoil type:           6 sect1
+  =================================================== 
+ Using sine function based clustering distribution
+ 
+ lethk =    2.0000000000000000E-002
+
+Using curvature control for camber definition...
+ xcp -0.14999999999999999        0.0000000000000000       0.14999999999999999       0.25000000000000000       0.50000000000000000       0.75000000000000000       0.95000000000000007        1.0000000000000000        1.0499999999999998     
+ ycp   0.0000000000000000        0.0000000000000000        0.0000000000000000       0.50000000000000000       0.29999999999999999       0.14999999999999999        0.0000000000000000        0.0000000000000000        0.0000000000000000     
+Total camber is:   -4.821634137134682
+Determinant is:    0.036934899225684
+Possible values of scaling factor are:      -250.256930878616231        0.439685772077245
+Camber line second derivative scaling factor:    0.439685772077245
+Inlet u-v metal angle in deg:    2.637135437249310
+Exit u-v metal angle in deg:   -2.184498699885375
+Stagger angle in deg:   -2.637135437249310
+ i_le =            0
+ i_te =            0
+         121
+         241
+ 
+ Stacking position on the chord as % of chord:   25.000000000000000     
+ Stacking position in % above(+ve) or below(-ve) meanline :   0.0000000000000000     
+ top curve points index range for % chord stacking:          44          45
+ bottom curve points index range for % chord stacking:          45          46
+ vtop_stack vbot_stack   6.0382594201481697E-002  -3.8514807551077564E-002
+ 
+ u_stack  v_stack  0.25000000000000000        0.0000000000000000     
+ 
+ chrd bladegen:   0.43379345134692471     
+ pitch   0.31415926535897931     
+ np_sidee         121
+ n_normal_distance =          100
+ Number of intersection points (k) =          100 from np_side of         121
+ splinedata_section.6.Case6_2.dat                                                
+ stingl:    0.0000000000000000     
+ ******************************************
+ 
+ Internally calculated chord...
+ Stagger calculated from the inlet and exit angles...
+
+ ---------------------------------------------------------------------------------
+ airfoil type:           7 sect1
+  =================================================== 
+ Using sine function based clustering distribution
+ 
+ lethk =    2.0000000000000000E-002
+
+Using curvature control for camber definition...
+ xcp -0.14999999999999999        0.0000000000000000       0.14999999999999999       0.25000000000000000       0.50000000000000000       0.75000000000000000       0.95000000000000007        1.0000000000000000        1.0499999999999998     
+ ycp   0.0000000000000000        0.0000000000000000        0.0000000000000000       0.50000000000000000       0.29999999999999999       0.14999999999999999        0.0000000000000000        0.0000000000000000        0.0000000000000000     
+Total camber is:   -2.792586879744006
+Determinant is:    0.036762734047244
+Possible values of scaling factor are:      -432.263536424897211        0.254553999120768
+Camber line second derivative scaling factor:    0.254553999120768
+Inlet u-v metal angle in deg:    1.527474156614636
+Exit u-v metal angle in deg:   -1.265112723129297
+Stagger angle in deg:   -1.527474156614636
+ i_le =            0
+ i_te =            0
+         121
+         241
+ 
+ Stacking position on the chord as % of chord:   25.000000000000000     
+ Stacking position in % above(+ve) or below(-ve) meanline :   0.0000000000000000     
+ top curve points index range for % chord stacking:          44          45
+ bottom curve points index range for % chord stacking:          45          46
+ vtop_stack vbot_stack   5.5763747283632266E-002  -4.3101824235279279E-002
+ 
+ u_stack  v_stack  0.25000000000000000        0.0000000000000000     
+ 
+ chrd bladegen:   0.40795894135182165     
+ pitch   0.31415926535897931     
+ np_sidee         121
+ n_normal_distance =          104
+ Number of intersection points (k) =          104 from np_side of         121
+ splinedata_section.7.Case6_2.dat                                                
+ stingl:    0.0000000000000000     
+ ******************************************
+ 
+ Internally calculated chord...
+ Stagger calculated from the inlet and exit angles...
+
+ ---------------------------------------------------------------------------------
+ airfoil type:           8 sect1
+  =================================================== 
+ Using sine function based clustering distribution
+ 
+ lethk =    2.0000000000000000E-002
+
+Using curvature control for camber definition...
+ xcp -0.14999999999999999        0.0000000000000000       0.14999999999999999       0.25000000000000000       0.50000000000000000       0.75000000000000000       0.94999999999999984        1.0000000000000000        1.0500000000000003     
+ ycp   0.0000000000000000        0.0000000000000000        0.0000000000000000       0.50000000000000000       0.29999999999999999       0.14999999999999999        0.0000000000000000        0.0000000000000000        0.0000000000000000     
+Total camber is:   -1.533256324971171
+Determinant is:    0.036702284616274
+Possible values of scaling factor are:      -787.412292089063385        0.139741801057114
+Camber line second derivative scaling factor:    0.139741801057114
+Inlet u-v metal angle in deg:    0.838672049895235
+Exit u-v metal angle in deg:   -0.694584275075794
+Stagger angle in deg:   -0.838672049895235
+ i_le =            0
+ i_te =            0
+         121
+         241
+ 
+ Stacking position on the chord as % of chord:   25.000000000000000     
+ Stacking position in % above(+ve) or below(-ve) meanline :   0.0000000000000000     
+ top curve points index range for % chord stacking:          44          45
+ bottom curve points index range for % chord stacking:          45          46
+ vtop_stack vbot_stack   5.2904048577139227E-002  -4.5951909224809483E-002
+ 
+ u_stack  v_stack  0.25000000000000000        0.0000000000000000     
+ 
+ chrd bladegen:   0.38548760309808777     
+ pitch   0.31415926535897931     
+ np_sidee         121
+ n_normal_distance =          107
+ Number of intersection points (k) =          107 from np_side of         121
+ splinedata_section.8.Case6_2.dat                                                
+ stingl:    0.0000000000000000     
+ ******************************************
+ 
+ Internally calculated chord...
+ Stagger calculated from the inlet and exit angles...
+
+ ---------------------------------------------------------------------------------
+ airfoil type:           9 sect1
+  =================================================== 
+ Using sine function based clustering distribution
+ 
+ lethk =    2.0000000000000000E-002
+
+Using curvature control for camber definition...
+ xcp -0.14999999999999997        0.0000000000000000       0.14999999999999997       0.25000000000000000       0.50000000000000000       0.75000000000000000       0.94999999999999984        1.0000000000000000        1.0500000000000003     
+ ycp   0.0000000000000000        0.0000000000000000        0.0000000000000000       0.50000000000000000       0.29999999999999993       0.14999999999999997        0.0000000000000000        0.0000000000000000        0.0000000000000000     
+Total camber is:   -1.294378192241676
+Determinant is:    0.036694798768119
+Possible values of scaling factor are:      -932.746036341892591        0.117968243856182
+Camber line second derivative scaling factor:    0.117968243856182
+Inlet u-v metal angle in deg:    0.708010763738858
+Exit u-v metal angle in deg:   -0.586367428503066
+Stagger angle in deg:   -0.708010763738858
+ i_le =            0
+ i_te =            0
+         121
+         241
+ 
+ Stacking position on the chord as % of chord:   25.000000000000000     
+ Stacking position in % above(+ve) or below(-ve) meanline :   0.0000000000000000     
+ top curve points index range for % chord stacking:          44          45
+ bottom curve points index range for % chord stacking:          45          46
+ vtop_stack vbot_stack   5.2362131202802906E-002  -4.6492878315202137E-002
+ 
+ u_stack  v_stack  0.25000000000000000        0.0000000000000000     
+ 
+ chrd bladegen:   0.36567967646499921     
+ pitch   0.31415926535897931     
+ np_sidee         121
+ n_normal_distance =          107
+ Number of intersection points (k) =          107 from np_side of         121
+ splinedata_section.9.Case6_2.dat                                                
+ stingl:    0.0000000000000000     
+ ******************************************
+ 
+ Internally calculated chord...
+ Stagger calculated from the inlet and exit angles...
+
+ ---------------------------------------------------------------------------------
+ airfoil type:          10 sect1
+  =================================================== 
+ Using sine function based clustering distribution
+ 
+ lethk =    2.0000000000000000E-002
+
+Using curvature control for camber definition...
+ xcp -0.15000000000000002        0.0000000000000000       0.15000000000000002       0.25000000000000000       0.50000000000000000       0.75000000000000000       0.94999999999999996        1.0000000000000000        1.0500000000000000     
+ ycp   0.0000000000000000        0.0000000000000000        0.0000000000000000       0.50000000000000000       0.30000000000000004       0.15000000000000002        0.0000000000000000        0.0000000000000000        0.0000000000000000     
+Total camber is:   -1.645234354054170
+Determinant is:    0.036706229971304
+Possible values of scaling factor are:      -733.812588035055796        0.149948929284064
+Camber line second derivative scaling factor:    0.149948929284064
+Inlet u-v metal angle in deg:    0.899921247871835
+Exit u-v metal angle in deg:   -0.745313106182010
+Stagger angle in deg:   -0.899921247871835
+ i_le =            0
+ i_te =            0
+         121
+         241
+ 
+ Stacking position on the chord as % of chord:   25.000000000000000     
+ Stacking position in % above(+ve) or below(-ve) meanline :   0.0000000000000000     
+ top curve points index range for % chord stacking:          44          45
+ bottom curve points index range for % chord stacking:          45          46
+ vtop_stack vbot_stack   5.3158136614260984E-002  -4.5698361772986050E-002
+ 
+ u_stack  v_stack  0.25000000000000000        0.0000000000000000     
+ 
+ chrd bladegen:   0.34802349063679239     
+ pitch   0.31415926535897931     
+ np_sidee         121
+ n_normal_distance =          106
+ Number of intersection points (k) =          106 from np_side of         121
+ splinedata_section.10.Case6_2.dat                                               
+ stingl:    0.0000000000000000     
+ ******************************************
+ 
+ Internally calculated chord...
+ Stagger calculated from the inlet and exit angles...
+
+ ---------------------------------------------------------------------------------
+ airfoil type:          11 sect1
+  =================================================== 
+ Using sine function based clustering distribution
+ 
+ lethk =    2.0000000000000000E-002
+
+Using curvature control for camber definition...
+ xcp -0.15000000000000002        0.0000000000000000       0.15000000000000002       0.25000000000000000       0.50000000000000000       0.75000000000000011       0.94999999999999984        1.0000000000000000        1.0500000000000003     
+ ycp   0.0000000000000000        0.0000000000000000        0.0000000000000000       0.50000000000000000       0.30000000000000004       0.15000000000000002        0.0000000000000000        0.0000000000000000        0.0000000000000000     
+Total camber is:   -2.025170513340160
+Determinant is:    0.036721693598417
+Possible values of scaling factor are:      -596.122547158995985        0.184583543090982
+Camber line second derivative scaling factor:    0.184583543090982
+Inlet u-v metal angle in deg:    1.107734581764656
+Exit u-v metal angle in deg:   -0.917435931575183
+Stagger angle in deg:   -1.107734581764656
+ i_le =            0
+ i_te =            0
+         121
+         241
+ 
+ Stacking position on the chord as % of chord:   25.000000000000000     
+ Stacking position in % above(+ve) or below(-ve) meanline :   0.0000000000000000     
+ top curve points index range for % chord stacking:          44          45
+ bottom curve points index range for % chord stacking:          45          46
+ vtop_stack vbot_stack   5.4020517013294994E-002  -4.4838272598105446E-002
+ 
+ u_stack  v_stack  0.25000000000000000        0.0000000000000000     
+ 
+ chrd bladegen:   0.33214639495698639     
+ pitch   0.31415926535897931     
+ np_sidee         121
+ n_normal_distance =          104
+ Number of intersection points (k) =          104 from np_side of         121
+ splinedata_section.11.Case6_2.dat                                               
+ stingl:    0.0000000000000000     
+ ******************************************
+ 
+ Internally calculated chord...
+ Stagger calculated from the inlet and exit angles...
+
+ ---------------------------------------------------------------------------------
+ airfoil type:          12 sect1
+  =================================================== 
+ Using sine function based clustering distribution
+ 
+ lethk =    2.0000000000000000E-002
+
+Using curvature control for camber definition...
+ xcp -0.14999999999999999        0.0000000000000000       0.14999999999999999       0.25000000000000000       0.50000000000000000       0.75000000000000011       0.95000000000000007        1.0000000000000000        1.0499999999999998     
+ ycp   0.0000000000000000        0.0000000000000000        0.0000000000000000       0.50000000000000000       0.29999999999999999       0.14999999999999999        0.0000000000000000        0.0000000000000000        0.0000000000000000     
+Total camber is:    2.601524815472087
+Determinant is:    0.036751287728670
+Possible values of scaling factor are:       464.022445316742392       -0.237131658137675
+Camber line second derivative scaling factor:   -0.237131658137675
+Inlet u-v metal angle in deg:   -1.422974394934033
+Exit u-v metal angle in deg:    1.178550420538327
+Stagger angle in deg:    1.422974394934033
+ i_le =            0
+ i_te =            0
+         121
+         241
+ 
+ Stacking position on the chord as % of chord:   25.000000000000000     
+ Stacking position in % above(+ve) or below(-ve) meanline :   0.0000000000000000     
+ top curve points index range for % chord stacking:          45          46
+ bottom curve points index range for % chord stacking:          44          45
+ vtop_stack vbot_stack   4.3534049324535355E-002  -5.5329564248121077E-002
+ 
+ u_stack  v_stack  0.25000000000000000        0.0000000000000000     
+ 
+ chrd bladegen:   0.31778863880287522     
+ pitch   0.31415926535897931     
+ np_sidee         121
+ n_normal_distance =          103
+ Number of intersection points (k) =          103 from np_side of         121
+ splinedata_section.12.Case6_2.dat                                               
+ stingl:    0.0000000000000000     
+ ******************************************
+ 
+ Internally calculated chord...
+ Stagger calculated from the inlet and exit angles...
+
+ ---------------------------------------------------------------------------------
+ airfoil type:          13 sect1
+  =================================================== 
+ Using sine function based clustering distribution
+ 
+ lethk =    2.0000000000000000E-002
+
+Using curvature control for camber definition...
+ xcp -0.14999999999999997        0.0000000000000000       0.14999999999999997       0.24999999999999997       0.49999999999999994       0.75000000000000000       0.94999999999999984        1.0000000000000000        1.0500000000000003     
+ ycp   0.0000000000000000        0.0000000000000000        0.0000000000000000       0.49999999999999994       0.29999999999999993       0.14999999999999997        0.0000000000000000        0.0000000000000000        0.0000000000000000     
+Total camber is:    2.820969264648411
+Determinant is:    0.036764504007101
+Possible values of scaling factor are:       427.912662023994415       -0.257142219981504
+Camber line second derivative scaling factor:   -0.257142219981504
+Inlet u-v metal angle in deg:   -1.542997538298006
+Exit u-v metal angle in deg:    1.277971726350376
+Stagger angle in deg:    1.542997538298006
+ i_le =            0
+ i_te =            0
+         121
+         241
+ 
+ Stacking position on the chord as % of chord:   25.000000000000000     
+ Stacking position in % above(+ve) or below(-ve) meanline :   0.0000000000000000     
+ top curve points index range for % chord stacking:          45          46
+ bottom curve points index range for % chord stacking:          44          45
+ vtop_stack vbot_stack   4.3037622012093261E-002  -5.5828255606556354E-002
+ 
+ u_stack  v_stack  0.25000000000000000        0.0000000000000000     
+ 
+ chrd bladegen:   0.30468690278788446     
+ pitch   0.31415926535897931     
+ np_sidee         121
+ n_normal_distance =          102
+ Number of intersection points (k) =          102 from np_side of         121
+ splinedata_section.13.Case6_2.dat                                               
+ stingl:    0.0000000000000000     
+ ******************************************
+ 
+ Internally calculated chord...
+ Stagger calculated from the inlet and exit angles...
+
+ ---------------------------------------------------------------------------------
+ airfoil type:          14 sect1
+  =================================================== 
+ Using sine function based clustering distribution
+ 
+ lethk =    2.0000000000000000E-002
+
+Using curvature control for camber definition...
+ xcp -0.14999999999999999        0.0000000000000000       0.14999999999999999       0.24999999999999997       0.49999999999999994       0.74999999999999989       0.94999999999999996        1.0000000000000000        1.0500000000000000     
+ ycp   0.0000000000000000        0.0000000000000000        0.0000000000000000       0.49999999999999994       0.29999999999999999       0.14999999999999999        0.0000000000000000        0.0000000000000000        0.0000000000000000     
+Total camber is:    2.384343986512743
+Determinant is:    0.036739266545247
+Possible values of scaling factor are:       506.302774331424359       -0.217329269065050
+Camber line second derivative scaling factor:   -0.217329269065050
+Inlet u-v metal angle in deg:   -1.304187567982381
+Exit u-v metal angle in deg:    1.080156418530559
+Stagger angle in deg:    1.304187567982381
+ i_le =            0
+ i_te =            0
+         121
+         241
+ 
+ Stacking position on the chord as % of chord:   25.000000000000000     
+ Stacking position in % above(+ve) or below(-ve) meanline :   0.0000000000000000     
+ top curve points index range for % chord stacking:          45          46
+ bottom curve points index range for % chord stacking:          44          45
+ vtop_stack vbot_stack   4.4025435407219711E-002  -5.4836169551861824E-002
+ 
+ u_stack  v_stack  0.25000000000000000        0.0000000000000000     
+ 
+ chrd bladegen:   0.29264566799157793     
+ pitch   0.31415926535897931     
+ np_sidee         121
+ n_normal_distance =          103
+ Number of intersection points (k) =          103 from np_side of         121
+ splinedata_section.14.Case6_2.dat                                               
+ stingl:    0.0000000000000000     
+ ******************************************
+ 
+ Internally calculated chord...
+ Stagger calculated from the inlet and exit angles...
+
+ ---------------------------------------------------------------------------------
+ airfoil type:          15 sect1
+  =================================================== 
+ Using sine function based clustering distribution
+ 
+ lethk =    2.0000000000000000E-002
+
+Using curvature control for camber definition...
+ xcp -0.14999999999999997        0.0000000000000000       0.14999999999999997       0.25000000000000000       0.50000000000000000       0.75000000000000000       0.94999999999999996        1.0000000000000000        1.0500000000000000     
+ ycp   0.0000000000000000        0.0000000000000000        0.0000000000000000       0.50000000000000000       0.29999999999999993       0.14999999999999997        0.0000000000000000        0.0000000000000000        0.0000000000000000     
+Total camber is:    1.616633081250456
+Determinant is:    0.036705195765038
+Possible values of scaling factor are:       746.796925328661246       -0.147341811594400
+Camber line second derivative scaling factor:   -0.147341811594400
+Inlet u-v metal angle in deg:   -0.884277089753635
+Exit u-v metal angle in deg:    0.732355991496917
+Stagger angle in deg:    0.884277089753635
+ i_le =            0
+ i_te =            0
+         121
+         241
+ 
+ Stacking position on the chord as % of chord:   25.000000000000000     
+ Stacking position in % above(+ve) or below(-ve) meanline :   0.0000000000000000     
+ top curve points index range for % chord stacking:          45          46
+ bottom curve points index range for % chord stacking:          44          45
+ vtop_stack vbot_stack   4.5763120089113485E-002  -5.3093234391533121E-002
+ 
+ u_stack  v_stack  0.25000000000000000        0.0000000000000000     
+ 
+ chrd bladegen:   0.28156125266285537     
+ pitch   0.31415926535897931     
+ np_sidee         121
+ n_normal_distance =          105
+ Number of intersection points (k) =          105 from np_side of         121
+ splinedata_section.15.Case6_2.dat                                               
+ stingl:    0.0000000000000000     
+ ******************************************
+ 
+ Internally calculated chord...
+ Stagger calculated from the inlet and exit angles...
+
+ ---------------------------------------------------------------------------------
+ airfoil type:          16 sect1
+  =================================================== 
+ Using sine function based clustering distribution
+ 
+ lethk =    2.0000000000000000E-002
+
+Using curvature control for camber definition...
+ xcp -0.14999999999999997        0.0000000000000000       0.14999999999999997       0.25000000000000000       0.50000000000000000       0.75000000000000000       0.94999999999999996        1.0000000000000000        1.0500000000000000     
+ ycp   0.0000000000000000        0.0000000000000000        0.0000000000000000       0.50000000000000000       0.29999999999999993       0.14999999999999997        0.0000000000000000        0.0000000000000000        0.0000000000000000     
+Total camber is:    0.820765220953178
+Determinant is:    0.036683700459356
+Possible values of scaling factor are:      1471.014626835864647       -0.074801711596657
+Camber line second derivative scaling factor:   -0.074801711596657
+Inlet u-v metal angle in deg:   -0.448951574597131
+Exit u-v metal angle in deg:    0.371813646356003
+Stagger angle in deg:    0.448951574597131
+ i_le =            0
+ i_te =            0
+         121
+         241
+ 
+ Stacking position on the chord as % of chord:   25.000000000000000     
+ Stacking position in % above(+ve) or below(-ve) meanline :   0.0000000000000000     
+ top curve points index range for % chord stacking:          45          46
+ bottom curve points index range for % chord stacking:          44          45
+ vtop_stack vbot_stack   4.7565799028756212E-002  -5.1288155324331418E-002
+ 
+ u_stack  v_stack  0.25000000000000000        0.0000000000000000     
+ 
+ chrd bladegen:   0.27132527687292329     
+ pitch   0.31415926535897931     
+ np_sidee         121
+ n_normal_distance =          108
+ Number of intersection points (k) =          108 from np_side of         121
+ splinedata_section.16.Case6_2.dat                                               
+ stingl:    0.0000000000000000     
+ ******************************************
+ 
+ Internally calculated chord...
+ Stagger calculated from the inlet and exit angles...
+
+ ---------------------------------------------------------------------------------
+ airfoil type:          17 sect1
+  =================================================== 
+ Using sine function based clustering distribution
+ 
+ lethk =    2.0000000000000000E-002
+
+Using curvature control for camber definition...
+ xcp -0.15000000000000002        0.0000000000000000       0.15000000000000002       0.25000000000000000       0.50000000000000000       0.75000000000000000       0.94999999999999996        1.0000000000000000        1.0500000000000000     
+ ycp   0.0000000000000000        0.0000000000000000        0.0000000000000000       0.50000000000000000       0.30000000000000004       0.15000000000000002        0.0000000000000000        0.0000000000000000        0.0000000000000000     
+Total camber is:    0.268648590797406
+Determinant is:    0.036677038903293
+Possible values of scaling factor are:      4494.259825129993260       -0.024483322316302
+Camber line second derivative scaling factor:   -0.024483322316302
+Inlet u-v metal angle in deg:   -0.146948869659303
+Exit u-v metal angle in deg:    0.121699721140097
+Stagger angle in deg:    0.146948869659303
+ i_le =            0
+ i_te =            0
+         121
+         241
+ 
+ Stacking position on the chord as % of chord:   25.000000000000000     
+ Stacking position in % above(+ve) or below(-ve) meanline :   0.0000000000000000     
+ top curve points index range for % chord stacking:          44          45
+ bottom curve points index range for % chord stacking:          44          45
+ vtop_stack vbot_stack   4.8817217260302671E-002  -5.0035777678452555E-002
+ 
+ u_stack  v_stack  0.25000000000000000        0.0000000000000000     
+ 
+ chrd bladegen:   0.26181569431987861     
+ pitch   0.31415926535897931     
+ np_sidee         121
+ n_normal_distance =          112
+ Number of intersection points (k) =          112 from np_side of         121
+ splinedata_section.17.Case6_2.dat                                               
+ stingl:    0.0000000000000000     
+ ******************************************
+ 
+ Internally calculated chord...
+ Stagger calculated from the inlet and exit angles...
+
+ ---------------------------------------------------------------------------------
+ airfoil type:          18 sect1
+  =================================================== 
+ Using sine function based clustering distribution
+ 
+ lethk =    2.0000000000000000E-002
+
+Using curvature control for camber definition...
+ xcp -0.14999999999999999        0.0000000000000000       0.14999999999999999       0.25000000000000000       0.50000000000000000       0.74999999999999989       0.94999999999999996        1.0000000000000000        1.0500000000000000     
+ ycp   0.0000000000000000        0.0000000000000000        0.0000000000000000       0.50000000000000000       0.29999999999999999       0.14999999999999999        0.0000000000000000        0.0000000000000000        0.0000000000000000     
+Total camber is:    0.403951884815281
+Determinant is:    0.036678046698984
+Possible values of scaling factor are:      2988.904745708989594       -0.036814291933869
+Camber line second derivative scaling factor:   -0.036814291933869
+Inlet u-v metal angle in deg:   -0.220958722841880
+Exit u-v metal angle in deg:    0.182993161973442
+Stagger angle in deg:    0.220958722841880
+ i_le =            0
+ i_te =            0
+         121
+         241
+ 
+ Stacking position on the chord as % of chord:   25.000000000000000     
+ Stacking position in % above(+ve) or below(-ve) meanline :   0.0000000000000000     
+ top curve points index range for % chord stacking:          44          45
+ bottom curve points index range for % chord stacking:          44          45
+ vtop_stack vbot_stack   4.8510472841531371E-002  -5.0342758445958660E-002
+ 
+ u_stack  v_stack  0.25000000000000000        0.0000000000000000     
+ 
+ chrd bladegen:   0.25290263844314109     
+ pitch   0.31415926535897931     
+ np_sidee         121
+ n_normal_distance =          110
+ Number of intersection points (k) =          110 from np_side of         121
+ splinedata_section.18.Case6_2.dat                                               
+ stingl:    0.0000000000000000     
+ ******************************************
+ 
+ Internally calculated chord...
+ Stagger calculated from the inlet and exit angles...
+
+ ---------------------------------------------------------------------------------
+ airfoil type:          19 sect1
+  =================================================== 
+ Using sine function based clustering distribution
+ 
+ lethk =    2.0000000000000000E-002
+
+Using curvature control for camber definition...
+ xcp -0.14999999999999997        0.0000000000000000       0.14999999999999997       0.25000000000000000       0.50000000000000000       0.75000000000000011       0.94999999999999996        1.0000000000000000        1.0500000000000000     
+ ycp   0.0000000000000000        0.0000000000000000        0.0000000000000000       0.50000000000000000       0.29999999999999993       0.14999999999999997        0.0000000000000000        0.0000000000000000        0.0000000000000000     
+Total camber is:    1.804564659135073
+Determinant is:    0.036712323998718
+Possible values of scaling factor are:       669.012539876280243       -0.164472869060697
+Camber line second derivative scaling factor:   -0.164472869060697
+Inlet u-v metal angle in deg:   -0.987070454261907
+Exit u-v metal angle in deg:    0.817494204872993
+Stagger angle in deg:    0.987070454261907
+ i_le =            0
+ i_te =            0
+         121
+         241
+ 
+ Stacking position on the chord as % of chord:   25.000000000000000     
+ Stacking position in % above(+ve) or below(-ve) meanline :   0.0000000000000000     
+ top curve points index range for % chord stacking:          45          46
+ bottom curve points index range for % chord stacking:          44          45
+ vtop_stack vbot_stack   4.5337639852514773E-002  -5.3519733423162186E-002
+ 
+ u_stack  v_stack  0.25000000000000000        0.0000000000000000     
+ 
+ chrd bladegen:   0.24447944454667839     
+ pitch   0.31415926535897931     
+ np_sidee         121
+ n_normal_distance =          103
+ Number of intersection points (k) =          103 from np_side of         121
+ splinedata_section.19.Case6_2.dat                                               
+ stingl:    0.0000000000000000     
+ ******************************************
+ 
+ Internally calculated chord...
+ Stagger calculated from the inlet and exit angles...
+
+ ---------------------------------------------------------------------------------
+ airfoil type:          20 sect1
+  =================================================== 
+ Using sine function based clustering distribution
+ 
+ lethk =    2.0000000000000000E-002
+
+Using curvature control for camber definition...
+ xcp -0.14999999999999999        0.0000000000000000       0.14999999999999999       0.25000000000000000       0.50000000000000000       0.75000000000000000       0.95000000000000007        1.0000000000000000        1.0499999999999998     
+ ycp   0.0000000000000000        0.0000000000000000        0.0000000000000000       0.50000000000000000       0.29999999999999999       0.14999999999999999        0.0000000000000000        0.0000000000000000        0.0000000000000000     
+Total camber is:    4.827310382863431
+Determinant is:    0.036935511488879
+Possible values of scaling factor are:       249.962306514015893       -0.440204018780229
+Camber line second derivative scaling factor:   -0.440204018780229
+Inlet u-v metal angle in deg:   -2.640239367522803
+Exit u-v metal angle in deg:    2.187071015340586
+Stagger angle in deg:    2.640239367522803
+ i_le =            0
+ i_te =            0
+         121
+         241
+ 
+ Stacking position on the chord as % of chord:   25.000000000000000     
+ Stacking position in % above(+ve) or below(-ve) meanline :   0.0000000000000000     
+ top curve points index range for % chord stacking:          45          46
+ bottom curve points index range for % chord stacking:          44          45
+ vtop_stack vbot_stack   3.8501981951877338E-002  -6.0395537179148390E-002
+ 
+ u_stack  v_stack  0.25000000000000000        0.0000000000000000     
+ 
+ chrd bladegen:   0.23649412666834518     
+ pitch   0.31415926535897931     
+ np_sidee         121
+ n_normal_distance =           96
+ Number of intersection points (k) =           96 from np_side of         121
+ splinedata_section.20.Case6_2.dat                                               
+ stingl:    0.0000000000000000     
+ ******************************************
+ 
+ Internally calculated chord...
+ Stagger calculated from the inlet and exit angles...
+
+ ---------------------------------------------------------------------------------
+ airfoil type:          21 sect1
+  =================================================== 
+ Using sine function based clustering distribution
+ 
+ lethk =    2.0000000000000000E-002
+
+Using curvature control for camber definition...
+ xcp -0.14999999999999999        0.0000000000000000       0.14999999999999999       0.25000000000000000       0.50000000000000000       0.75000000000000000       0.94999999999999996        1.0000000000000000        1.0500000000000000     
+ ycp   0.0000000000000000        0.0000000000000000        0.0000000000000000       0.50000000000000000       0.29999999999999999       0.14999999999999999        0.0000000000000000        0.0000000000000000        0.0000000000000000     
+Total camber is:    9.707080584041037
+Determinant is:    0.037739966346453
+Possible values of scaling factor are:       124.075750094880505       -0.886832534052003
+Camber line second derivative scaling factor:   -0.886832534052003
+Inlet u-v metal angle in deg:   -5.307545630299404
+Exit u-v metal angle in deg:    4.399534953741623
+Stagger angle in deg:    5.307545630299404
+ i_le =            0
+ i_te =            0
+         121
+         241
+ 
+ Stacking position on the chord as % of chord:   25.000000000000000     
+ Stacking position in % above(+ve) or below(-ve) meanline :   0.0000000000000000     
+ top curve points index range for % chord stacking:          45          46
+ bottom curve points index range for % chord stacking:          44          45
+ vtop_stack vbot_stack   2.7479902425571585E-002  -7.1577353305323985E-002
+ 
+ u_stack  v_stack  0.25000000000000000        0.0000000000000000     
+ 
+ chrd bladegen:   0.22849713231475538     
+ pitch   0.31415926535897931     
+ np_sidee         121
+ n_normal_distance =           88
+ Number of intersection points (k) =           88 from np_side of         121
+ splinedata_section.21.Case6_2.dat                                               
+ stingl:    0.0000000000000000     
+ ******************************************
+ Number of airfoil coordinates:         241
+ 
+ Stacking Axis location:       25000
+ 
+ Section #           1
+ Section #           2
+ Section #           3
+ Section #           4
+ Section #           5
+ Section #           6
+ Section #           7
+ Section #           8
+ Section #           9
+ Section #          10
+ Section #          11
+ Section #          12
+ Section #          13
+ Section #          14
+ Section #          15
+ Section #          16
+ Section #          17
+ Section #          18
+ Section #          19
+ Section #          20
+ Section #          21
+ i_slope           0
+ i_slope           0
+ i_slope           0
+ i_slope           0
+ i_slope           0
+ i_slope           0
+ i_slope           0
+ i_slope           0
+ i_slope           0
+ i_slope           0
+ i_slope           0
+ i_slope           0
+ i_slope           0
+ i_slope           0
+ i_slope           0
+ i_slope           0
+ i_slope           0
+ i_slope           0
+ i_slope           0
+ i_slope           0
+ i_slope           0
+ 
+ span          delta_m
+   0.0000000000000000        0.0000000000000000     
+   4.3387452907245522E-002   0.0000000000000000     
+   9.1666814348395992E-002   0.0000000000000000     
+  0.14180684101438704        0.0000000000000000     
+  0.19287314220344681        0.0000000000000000     
+  0.24429913550710761        0.0000000000000000     
+  0.29570585218523998        0.0000000000000000     
+  0.34684875028072154        0.0000000000000000     
+  0.39758620514910942        0.0000000000000000     
+  0.44785993027610921        0.0000000000000000     
+  0.49767092108288941        0.0000000000000000     
+  0.54706198722188681        0.0000000000000000     
+  0.59610281898167339        0.0000000000000000     
+  0.64488314347623310        0.0000000000000000     
+  0.69351621916945305        0.0000000000000000     
+  0.74214526809226933        0.0000000000000000     
+  0.79095033706026341        0.0000000000000000     
+  0.84016821100777206        0.0000000000000000     
+  0.89017971105885929        0.0000000000000000     
+  0.94188710962677069        0.0000000000000000     
+   1.0000000000000000        0.0000000000000000     
+ 
+ span         delta_theta
+   0.0000000000000000        0.0000000000000000     
+   4.3387452907245522E-002   0.0000000000000000     
+   9.1666814348395992E-002   0.0000000000000000     
+  0.14180684101438704        0.0000000000000000     
+  0.19287314220344681        0.0000000000000000     
+  0.24429913550710761        0.0000000000000000     
+  0.29570585218523998        0.0000000000000000     
+  0.34684875028072154        0.0000000000000000     
+  0.39758620514910942        0.0000000000000000     
+  0.44785993027610921        0.0000000000000000     
+  0.49767092108288941        0.0000000000000000     
+  0.54706198722188681        0.0000000000000000     
+  0.59610281898167339        0.0000000000000000     
+  0.64488314347623310        0.0000000000000000     
+  0.69351621916945305        0.0000000000000000     
+  0.74214526809226933        0.0000000000000000     
+  0.79095033706026341        0.0000000000000000     
+  0.84016821100777206        0.0000000000000000     
+  0.89017971105885929        0.0000000000000000     
+  0.94188710962677069        0.0000000000000000     
+   1.0000000000000000        0.0000000000000000     
+ 
+ section(           1 )
+ 3D throat line [mm] =   13.704958443556837     
+ 3D mouth line [mm] =   17.888776418340953     
+ 3D exit line [mm] =   14.913377754691542     
+ section(           2 )
+ 3D throat line [mm] =   15.331818291373100     
+ 3D mouth line [mm] =   19.210139445087499     
+ 3D exit line [mm] =   17.144804264565419     
+ section(           3 )
+ 3D throat line [mm] =   16.993295630108651     
+ 3D mouth line [mm] =   20.680485337473705     
+ 3D exit line [mm] =   19.023374478794658     
+ section(           4 )
+ 3D throat line [mm] =   18.665543055538620     
+ 3D mouth line [mm] =   22.207497709879174     
+ 3D exit line [mm] =   21.046664862790308     
+ section(           5 )
+ 3D throat line [mm] =   20.331716097791144     
+ 3D mouth line [mm] =   23.762719733356334     
+ 3D exit line [mm] =   23.111456527438563     
+ section(           6 )
+ 3D throat line [mm] =   21.965100609585289     
+ 3D mouth line [mm] =   25.328896164833932     
+ 3D exit line [mm] =   24.933535399620652     
+ section(           7 )
+ 3D throat line [mm] =   23.579821910472273     
+ 3D mouth line [mm] =   26.894485527503619     
+ 3D exit line [mm] =   26.990664965052961     
+ section(           8 )
+ 3D throat line [mm] =   25.165353826088285     
+ 3D mouth line [mm] =   28.452040306497178     
+ 3D exit line [mm] =   28.750724497928342     
+ section(           9 )
+ 3D throat line [mm] =   26.722414817597755     
+ 3D mouth line [mm] =   29.997247329311676     
+ 3D exit line [mm] =   30.205022910034291     
+ section(          10 )
+ 3D throat line [mm] =   28.252806178772648     
+ 3D mouth line [mm] =   31.528331482641690     
+ 3D exit line [mm] =   31.774791282119065     
+ section(          11 )
+ 3D throat line [mm] =   29.758952747522077     
+ 3D mouth line [mm] =   33.045323081996429     
+ 3D exit line [mm] =   33.077425756941665     
+ section(          12 )
+ 3D throat line [mm] =   31.244103803069535     
+ 3D mouth line [mm] =   34.549525893513938     
+ 3D exit line [mm] =   34.683336326671707     
+ section(          13 )
+ 3D throat line [mm] =   32.712599375108184     
+ 3D mouth line [mm] =   36.043062331958744     
+ 3D exit line [mm] =   35.936852990635430     
+ section(          14 )
+ 3D throat line [mm] =   34.167232089685776     
+ 3D mouth line [mm] =   37.528665032758042     
+ 3D exit line [mm] =   37.428038183502082     
+ section(          15 )
+ 3D throat line [mm] =   35.609689621563838     
+ 3D mouth line [mm] =   39.009783277596519     
+ 3D exit line [mm] =   38.791798214122345     
+ section(          16 )
+ 3D throat line [mm] =   37.046278753839800     
+ 3D mouth line [mm] =   40.490778887314079     
+ 3D exit line [mm] =   40.148660109206666     
+ section(          17 )
+ 3D throat line [mm] =   38.484847289151851     
+ 3D mouth line [mm] =   41.977135179995805     
+ 3D exit line [mm] =   41.571685032585137     
+ section(          18 )
+ 3D throat line [mm] =   39.936258931223030     
+ 3D mouth line [mm] =   43.476063430712614     
+ 3D exit line [mm] =   42.819826557195931     
+ section(          19 )
+ 3D throat line [mm] =   41.413414926916744     
+ 3D mouth line [mm] =   44.999161530546125     
+ 3D exit line [mm] =   44.039240308278025     
+ section(          20 )
+ 3D throat line [mm] =   42.939056188746484     
+ 3D mouth line [mm] =   46.573908147337491     
+ 3D exit line [mm] =   45.270226964851005     
+ section(          21 )
+ 3D throat line [mm] =   44.620081033720083     
+ 3D mouth line [mm] =   48.343733743708057     
+ 3D exit line [mm] =   46.000110415001949     
+ Number of radial sections:          21
+ 
+ Writing 3D blade geometry ...
+ 
+ chord_actual(mm):   35.601166685976345     
+ chord_actual(mm):   35.468012194060684     
+ chord_actual(mm):   35.447899486325078     
+ chord_actual(mm):   35.449607622141173     
+ chord_actual(mm):   35.457583680032812     
+ chord_actual(mm):   35.471988965034306     
+ chord_actual(mm):   35.499531896362235     
+ chord_actual(mm):   35.518123473309203     
+ chord_actual(mm):   35.520276598883221     
+ chord_actual(mm):   35.503903022198926     
+ chord_actual(mm):   35.470998855168418     
+ chord_actual(mm):   35.429509620329505     
+ chord_actual(mm):   35.377979962456408     
+ chord_actual(mm):   35.313819779305646     
+ chord_actual(mm):   35.243292664473074     
+ chord_actual(mm):   35.176443993023057     
+ chord_actual(mm):   35.117603549745724     
+ chord_actual(mm):   35.068857728889114     
+ chord_actual(mm):   35.033671917182339     
+ chord_actual(mm):   35.034231241512998     
+ chord_actual(mm):   35.129145306856479     
+ 
+ Calculating the meanline by taking the average of PS ans SS in 3D...
+ Writing the meanline in 3D to meanline.sec#.dat files...
+ 
+ Writing the top and bottom periodic wall coordinates...
+ 
+         121
+ throat_index           1          52
+ throat_index           2          51
+ throat_index           3          51
+ throat_index           4          50
+ throat_index           5          50
+ throat_index           6          49
+ throat_index           7          49
+ throat_index           8          49
+ throat_index           9          49
+ throat_index          10          49
+ throat_index          11          49
+ throat_index          12          49
+ throat_index          13          49
+ throat_index          14          49
+ throat_index          15          49
+ throat_index          16          49
+ throat_index          17          49
+ throat_index          18          49
+ throat_index          19          49
+ throat_index          20          49
+ throat_index          21          52
+ 
+ Casename:Case6_2
+ 
+ Fname: blade3d.Case6_2.dat
+ 
+ Creating section data files for CAD system...
+ 
+ # of points:         241
+ 
+ # of sections:          21
+ 
+ bsf:   152.40000000000001     
+ Number of blades in this row:          20
+ 
+ --- END ---
+ 
