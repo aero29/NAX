@@ -10,7 +10,7 @@ The package comes with complete documentation and system requires Python v2.7 an
 To cite this code :
 Kumar, S., Turner, M. G., Siddappaji, K., & Celestina, M. (2018, June). Aerodynamic Design System for Non-Axisymmetric Boundary Layer Ingestion Fans. In Turbo Expo: Power for Land, Sea, and Air (Vol. 51012, p. V02CT42A048). American Society of Mechanical Engineers.
 
-For further details/ latest capabilities please contact 
+> NAX is under development for V1.0 to be released soon. For further details/ issues / latest capabilities please contact 
 Sandeep Kumar : kumarsp@mail.uc.edu 
 or see website : http://gtsl.ase.uc.edu/NAX/
 
