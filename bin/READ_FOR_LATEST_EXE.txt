@@ -1,0 +1,4 @@
+If the current executables are not supported on your operating system,
+please consider downloading the latest version from - 
+http://gtsl.ase.uc.edu/t-blade3/
+
