@@ -1,6 +1,7 @@
 # NAX
 
 (> NAX is currently under development for V1.0 - to be released soon !!!.
+
  For further details/ issues / latest capabilities please contact directly :: email Sandeep Kumar : kumarsp@mail.uc.edu )
 
 
