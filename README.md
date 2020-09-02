@@ -24,3 +24,4 @@ Kumar, S., Turner, M. G., Siddappaji, K., & Celestina, M. (2018, June). Aerodyna
 
 or see website : http://gtsl.ase.uc.edu/NAX/
 
+<img src="archives/nax_logo.png" width="300">
