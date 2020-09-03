@@ -1,4 +1,4 @@
-# NAX
+## NAX
 
 (> NAX is currently under development for V1.0 - to be released soon !!! ) 
 
@@ -21,10 +21,12 @@ or see website : http://gtsl.ase.uc.edu/NAX/
 
 > NAX provides a unique design capability for development of **multi-row Axisymmetric and/or non-axisymmetric turbomachinery 3D blade** design and development. 
 
+<img src="archives/nax_logo.png" width="250">
+
 > It uses **harmonics content (Discrete Fourier Transforms) based design space to represent blade parameters in (R, THETA)** space . 
 Following blade parameters can be used to create non-axisymmetry in 3D blade designs - 
 
-*1. Inlet blade metal angles,  
+*1. Inlet /exit blade metal angles,  
 *2. Lean,  
 *3. Sweep,  
 *4. thickness,  
@@ -32,7 +34,7 @@ Following blade parameters can be used to create non-axisymmetry in 3D blade des
 
 All these blade parameters can exhibit **non-axisymmetry in R , or (R,THETA )** direction for blade design.
 
-<img src="archives/nax_logo.png" width="250">
+
 
 > NAX is **highly paramteric and completely automated** in nature and can easily be integrated to Analysis(CFD) or/and Optimization process.
 
