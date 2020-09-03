@@ -24,7 +24,7 @@ or see website : http://gtsl.ase.uc.edu/NAX/
 <img src="archives/nax_logo.png" width="250">
 
 > It uses **harmonics content (Discrete Fourier Transforms) based design space to represent blade parameters in (R, THETA)** space . 
-Following blade parameters can be used to create non-axisymmetry in 3D blade designs - 
+Following blade parameters **f(theta)**, can be used to create non-axisymmetry in 3D blade designs - 
 
 <img src="archives/nax_dft_form.PNG" >
 
