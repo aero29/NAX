@@ -1,8 +1,8 @@
-## NAX
+### NAX v0.3.1
 
-(> NAX is currently under development for V1.0 - to be released soon !!! ) 
+(> NAX is currently under development for v1.0 - to be released soon !!! ) 
 
- For further details/ issues / latest capabilities please contact directly :: email Sandeep Kumar : kumarsp@mail.uc.edu )
+ For further details/ issues / latest capabilities please directly contact :: email Sandeep Kumar : kumarsp@mail.uc.edu )
 
 #---------------      **N**on-**AX**isymmetric 3D blade design system      ---------------------------------------------------------#
 
@@ -34,7 +34,7 @@ Following blade parameters **f(theta)**, can be used to create non-axisymmetry i
 *4. thickness,  
 *5. chord length *
 
-All these blade parameters can exhibit **non-axisymmetry in R , or (R,THETA )** direction for blade design.
+All these blade parameters can exhibit **non-axisymmetry in R , or (R,THETA )** direction for blade design. This non-axisymmetry can be assigned at used defined span location with magnitude, phase values for designing. 
 
 
 
@@ -42,3 +42,5 @@ All these blade parameters can exhibit **non-axisymmetry in R , or (R,THETA )** 
 
 >The package comes with complete documentation and system requires Python v3x and Shell ( Unix environmemt). Windows OS users can use Cygwin. 
 
+> The definition of non-axisymmetry is shown here using NAX-input file
+<img src="archives/nax_input_file.PNG" width="950">
