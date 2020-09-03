@@ -8,7 +8,8 @@
 
 NAX was first developed to design distortion tolerant propulsion systems for *Boundary Layer Ingestion* or *Turbo-Electic propulsion* configuarations as mentioned in NASA N+3 category.
 
-> It was presented at ASME International Gas-Turbine Institute - Turbo Expo, Norway, 2018 
+> It was presented at ASME International Gas-Turbine Institute - Turbo Expo, Norway, 2018
+
 **To cite this code:**
 Kumar, S., Turner, M. G., Siddappaji, K., & Celestina, M. (2018, June). Aerodynamic Design System for Non-Axisymmetric Boundary Layer Ingestion Fans. In Turbo Expo: Power for Land, Sea, and Air (Vol. 51012, p. V02CT42A048). American Society of Mechanical Engineers.
 
