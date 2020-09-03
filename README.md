@@ -17,7 +17,7 @@ or see website : http://gtsl.ase.uc.edu/NAX/
 
 > so far NAX has been used in design of 1.5 stage transonic BLI thruster design.
 
-#----------------------------------------------------------------------------------------------------------------------------------#
+#------------------------------------------------------------------------------------------------------------------------------#
 
 > NAX provides a unique design capability for development of **multi-row Axisymmetric and/or non-axisymmetric turbomachinery 3D blade** design and development. 
 
