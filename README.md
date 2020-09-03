@@ -21,10 +21,10 @@ or see website : http://gtsl.ase.uc.edu/NAX/
 
 > NAX provides a unique design capability for development of **multi-row Axisymmetric and/or non-axisymmetric turbomachinery 3D blade** design and development. 
 
-> It uses **harmonics content (Discrete Fourier Transforms) based design space to represent blade parameters in **(R, THETA)** space . 
+> It uses **harmonics content (Discrete Fourier Transforms) based design space to represent blade parameters in (R, THETA)** space . 
 Following blade parameters can be used to create non-axisymmetry in 3D blade designs - 
 
-*1. Inlet blade metal angles, 
+*1. Inlet blade metal angles,  
 *2. Lean,  
 *3. Sweep,  
 *4. thickness,  
