@@ -4,9 +4,7 @@
 
  For further details/ issues / latest capabilities please contact directly :: email Sandeep Kumar : kumarsp@mail.uc.edu )
 
-#------------------------------------------------------------------------------------------------------------------------------#
-                      **N**on-**AX**isymmetric 3D blade design system
-#------------------------------------------------------------------------------------------------------------------------------#
+#---------------      **N**on-**AX**isymmetric 3D blade design system      ---------------------------------------------------------#
 
 NAX was first developed to design distortion tolerant propulsion systems for *Boundary Layer Ingestion* or *Turbo-Electic propulsion* configuarations as mentioned in NASA N+3 category.
 
@@ -25,10 +23,10 @@ or see website : http://gtsl.ase.uc.edu/NAX/
 > It uses **harmonics content (Discrete Fourier Transforms) based design space to represent blade parameters in **(R, THETA)** space . 
 Following blade parameters can be used to create non-axisymmetry in 3D blade designs - 
 
-*1. Inlet blade metal angles
-*2. Lean 
-*3. Sweep 
-*4. thickness 
+*1. Inlet blade metal angles, 
+*2. Lean,  
+*3. Sweep,  
+*4. thickness,  
 *5. chord length *
 
 All these blade parameters can exhibit **non-axisymmetry in R , or (R,THETA )** direction for blade design.
