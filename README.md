@@ -22,12 +22,19 @@ or see website : http://gtsl.ase.uc.edu/NAX/
 
  **How to run ** 
 
-1. Make sure you have permissions on your machine. Else in "executables" directory - 
+1. Use the executables specific to your OS.
+
+2. Make sure you have permissions on your machine. Else for Unix\Linux user:  in "executables" directory -
+
 chmod 777 .\tblade3 ( PRESS RETURN)
+
 chmod 777 .\geomTurbo ( PRESS RETURN)
 
-2. Make any "design-case" directory your working directory and run wrapper script from here - 
-..\.\naxdesign.sh   ( PRESS RETURN)
+
+3. Make any "design-case" directory your working directory and run wrapper script from here - 
+
+..\ .\ naxdesign.sh   ( PRESS RETURN)
+
 
 In case of any issue: Please check the files in "inputs" directory for correctness and "scripts\geomTurbo_v0.3.py" for "n" blade row case. 
 
