@@ -19,6 +19,7 @@ or see website : http://gtsl.ase.uc.edu/NAX/
 
 
 #-------------------------------------------------------------------------------------#
+
  **How to run ** 
 
 1. Make sure you have permissions on your machine. Else in "executables" directory - 
@@ -29,6 +30,7 @@ chmod 777 .\geomTurbo ( PRESS RETURN)
 ..\.\naxdesign.sh   ( PRESS RETURN)
 
 In case of any issue: Please check the files in "inputs" directory for correctness and "scripts\geomTurbo_v0.3.py" for "n" blade row case. 
+
 #--------------------------------------------------------------------------------------#
 
 
