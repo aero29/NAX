@@ -16,6 +16,8 @@ Kumar, S., Turner, M. G., Siddappaji, K., & Celestina, M. (2018, June). Aerodyna
 or see website : http://gtsl.ase.uc.edu/NAX/
 
 > NAX has been already used in design of 1.5 stage transonic BLI thruster design ( as in NASA N+3 configuration).
+
+
 #-------------------------------------------------------------------------------------#
  **How to run ** 
 
@@ -28,6 +30,7 @@ chmod 777 .\geomTurbo ( PRESS RETURN)
 
 In case of any issue: Please check the files in "inputs" directory for correctness and "scripts\geomTurbo_v0.3.py" for "n" blade row case. 
 #--------------------------------------------------------------------------------------#
+
 
 > NAX provides a unique design capability for development of **multi-row Axisymmetric and/or non-axisymmetric turbomachinery 3D blade** design and development. 
 
