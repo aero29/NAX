@@ -8,7 +8,6 @@
 
 NAX was first developed to design distortion tolerant propulsion systems for *Boundary Layer Ingestion* or *Turbo-Electic propulsion* configuarations as mentioned in NASA N+3 category.
 
-> It was presented at ASME International Gas-Turbine Institute - Turbo Expo, Norway, 2018
 
 **To cite this code:**
 
