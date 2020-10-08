@@ -11,11 +11,17 @@ NAX was first developed to design distortion tolerant propulsion systems for *Bo
 > It was presented at ASME International Gas-Turbine Institute - Turbo Expo, Norway, 2018
 
 **To cite this code:**
-Kumar, S., Turner, M. G., Siddappaji, K., & Celestina, M. (2018, June). Aerodynamic Design System for Non-Axisymmetric Boundary Layer Ingestion Fans. In Turbo Expo: Power for Land, Sea, and Air (Vol. 51012, p. V02CT42A048). American Society of Mechanical Engineers.
+
+
+Kumar, Sandeep, Turner, Mark G., Siddappaji, Kiran, and Celestina, Mark. "Aerodynamic Design System for Non-Axisymmetric Boundary Layer Ingestion Fans." Proceedings of the ASME Turbo Expo 2018: Turbomachinery Technical Conference and Exposition. Volume 2C: Turbomachinery. Oslo, Norway. June 11–15, 2018. V02CT42A048. ASME. https://doi.org/10.1115/GT2018-77042
 
 or see website : http://gtsl.ase.uc.edu/NAX/
 
+**Known Applications**
+
+
 > NAX has been already used in design of 1.5 stage transonic BLI thruster design ( as in NASA N+3 configuration).
+> NAX is also being used for design of 1 stage Outlet Guide Vanes to reduce effect of couple effect on rotor.
 
 
 #-------------------------------------------------------------------------------------#
