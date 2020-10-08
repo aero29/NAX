@@ -19,9 +19,9 @@ or see website : http://gtsl.ase.uc.edu/NAX/
 
 **Known Applications**
 
+1. NAX has been already used in design of 1.5 stage transonic BLI thruster design ( as in NASA N+3 configuration).
+2. NAX is also being used for design of 1 stage Outlet Guide Vanes to reduce effect of couple effect on rotor.
 
-> NAX has been already used in design of 1.5 stage transonic BLI thruster design ( as in NASA N+3 configuration).
-> NAX is also being used for design of 1 stage Outlet Guide Vanes to reduce effect of couple effect on rotor.
 
 
 #-------------------------------------------------------------------------------------#
